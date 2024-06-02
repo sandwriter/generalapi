@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Job Application Filler",
+    "version": "1.0",
+    "description": "Automatically fills job application forms",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
